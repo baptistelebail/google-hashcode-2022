@@ -2,6 +2,6 @@
 
 LiveaAction
 
-Raphaël Lecoutre
-Pascal Pratmarty
-Baptiste Le Bail
+Raphaël Lecoutre  
+Pascal Pratmarty  
+Baptiste Le Bail  
