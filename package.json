@@ -1,0 +1,23 @@
+{
+  "name": "google-hashcode-2022",
+  "version": "1.0.0",
+  "description": "LiveaAction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baptistelebail/google-hashcode-2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baptistelebail/google-hashcode-2022/issues"
+  },
+  "homepage": "https://github.com/baptistelebail/google-hashcode-2022#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1"
+  }
+}
