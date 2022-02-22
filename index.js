@@ -1,5 +1,6 @@
-const { read } = require("./utils/utils");
+const { read, generateSolution } = require("./utils/utils");
 
 
-const customers = read('/score/a_an_example.in.txt');
-console.log(customers);
+const input = read('/score/a_an_example.in.txt');
+
+generateSolution(string);

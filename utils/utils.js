@@ -5,17 +5,6 @@ function readFile(file) {
   return fs.readFileSync(path.join(__dirname, `../${file}`), 'utf8');
 }
 
-class Ingredient {
-
-    id;
-    dislike;
-
-    constructor(id, dislike) {
-        this.id = id;
-        this.dislike = dislike;
-    }
-}
-
 class Customer {
     
     likes;
@@ -50,8 +39,11 @@ function read(file) {
   return customers;
 }
 
+function generateSolution(data) {
+  fs.writeFileSync(path.join(__dirname, '../result.txt'), data);
+}
+
 module.exports = {
   read,
-  Customer,
-  Ingredient,
+  generateSolution
 };
