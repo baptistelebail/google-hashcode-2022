@@ -35,7 +35,7 @@ function read(file) {
 
   const customers = [];
 
-  for (let i = 0; i < lines.length / 2; i++) {
+  for (let i = 0; i < lines.length; i = i + 2) {
     const likes = lines[i].split(' ');
     likes.shift();
 
