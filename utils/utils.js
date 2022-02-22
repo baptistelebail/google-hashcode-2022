@@ -41,6 +41,7 @@ function read(file) {
 
 function generateSolution(data) {
   fs.writeFileSync(path.join(__dirname, '../result.txt'), data);
+  console.log('\n\nResult file generated\n\n');
 }
 
 module.exports = {
