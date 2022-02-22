@@ -1,3 +1,4 @@
+const { readFile } = require("./utils/parser");
 
 class Ingredient {
 
@@ -20,3 +21,6 @@ class Customer {
         this.dislikes = dislikes;
     }
 }
+
+const a = readFile('/score/a_an_example.in.txt');
+console.log(a);
