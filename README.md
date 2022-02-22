@@ -1,6 +1,6 @@
 # Google Hashcode 2022
 
-LiveaAction
+Team LARPB
 
 Raphaël Lecoutre  
 Pascal Pratmarty  
