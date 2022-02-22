@@ -2,8 +2,6 @@
 
 LiveaAction
 
-Raphaël Lecougre
-PAscal Pratmarty
+Raphaël Lecoutre
+Pascal Pratmarty
 Baptiste Le Bail
-
-
