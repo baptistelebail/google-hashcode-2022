@@ -5,18 +5,19 @@ function findEligibleProjects(t, contributors, projects) {
   const eligibleProjects = [];
 
   for (let i = 0; i < projects.length; i++) {
-    if (t <= projects[i].bestBefore - projects[i].duration) {
+    if (t <= projects[i].bestBefore - projects[i].duration + projects[i].score / 2) {
       const collaboratersMatched = [];
 
       projects[i].skills.forEach((skillNeeded) => {
-        contributors.forEach((c) => {
+        contributors.forEach(function(c) {
           if (c.remainingDays === 0) {
-            c.skills.forEach((cSkill) => {
+            c.skills.forEach(function(cSkill) {
               if (cSkill.name === skillNeeded.name && cSkill.level >= skillNeeded.level) {
                 collaboratersMatched.push(c.name);
 
                 const contributorIndex = contributors.findIndex((contributor) => contributor.name === c.name);
                 contributors.splice(contributorIndex, 1);
+                return;
               }
             });
           }
@@ -28,6 +29,8 @@ function findEligibleProjects(t, contributors, projects) {
           project: projects[i],
           contributors: collaboratersMatched
         });
+
+        console.log(projects[i].name, contributors);
       }
     }
   }
@@ -44,30 +47,30 @@ function findProjectContributors(project, contributors) {
 }
 
 const files = [
-  {
-    input: '/score/a_an_example.in.txt',
-    output: '../outputs/a_an_example.in.txt'
-  },
+  // {
+  //   input: '/score/a_an_example.in.txt',
+  //   output: '../outputs/a_an_example.in.txt'
+  // },
   {
     input: '/score/b_better_start_small.in.txt',
     output: '../outputs/b_better_start_small.in.txt'
   },
-  {
-    input: '/score/c_collaboration.in.txt',
-    output: '../outputs/c_collaboration.in.txt'
-  },
-  {
-    input: '/score/d_dense_schedule.in.txt',
-    output: '../outputs/d_dense_schedule.in.txt'
-  },
-  {
-    input: '/score/e_exceptional_skills.in.txt',
-    output: '../outputs/e_exceptional_skills.in.txt'
-  },
-  {
-    input: '/score/f_find_great_mentors.in.txt',
-    output: '../outputs/f_find_great_mentors.in.txt'
-  },
+  // {
+  //   input: '/score/c_collaboration.in.txt',
+  //   output: '../outputs/c_collaboration.in.txt'
+  // },
+  // {
+  //   input: '/score/d_dense_schedule.in.txt',
+  //   output: '../outputs/d_dense_schedule.in.txt'
+  // },
+  // {
+  //   input: '/score/e_exceptional_skills.in.txt',
+  //   output: '../outputs/e_exceptional_skills.in.txt'
+  // },
+  // {
+  //   input: '/score/f_find_great_mentors.in.txt',
+  //   output: '../outputs/f_find_great_mentors.in.txt'
+  // },
 ];
 
 files.forEach(({ input, output: outputName }) => {
