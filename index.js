@@ -14,6 +14,9 @@ function findEligibleProjects(t, contributors, projects) {
             c.skills.forEach((cSkill) => {
               if (cSkill.name === skillNeeded.name && cSkill.level >= skillNeeded.level) {
                 collaboratersMatched.push(c.name);
+
+                const contributorIndex = contributors.findIndex((contributor) => contributor.name === c.name);
+                contributors.splice(contributorIndex, 1);
               }
             });
           }
@@ -78,7 +81,8 @@ files.forEach(({ input, output: outputName }) => {
 
   while (true) {
     if (projectRemainingDays === 0) {
-      const eligiblesProject = findEligibleProjects(day, contributors, projects);
+      const contributorsCopy = [...contributors];
+      const eligiblesProject = findEligibleProjects(day, contributorsCopy, projects);
 
       if (eligiblesProject.length === 0) {
         break;
@@ -90,6 +94,18 @@ files.forEach(({ input, output: outputName }) => {
 
       projectsDone.push(projectOfTheDay);
       
+      // projectOfTheDay.project.skills.forEach((skill) => {
+
+      // });
+
+      // projectOfTheDay.contributors.forEach((projectContributor) => {
+      //   contributors.forEach((contributor) => {
+      //     if (contributor.name === projectContributor.name) {
+      //       if ()
+      //     }
+      //   })
+      // });
+
       const projectIndex = projects.findIndex((project) => project.name === projectOfTheDay.project.name);
       projects.splice(projectIndex, 1);
     } else {
